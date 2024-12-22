@@ -58,7 +58,9 @@ def dump_bible():
 
 def build_index(args) -> str:
     if not os.path.exists("verses.txt"):
-        print("Writing verse list to verses.txt")
+        print(
+            "DANGER: Writing verse list to verses.txt. Make sure this verse list is identical to the one you used to create your mapping. It is best to use the one already provided in this repository."
+        )
         dump_bible()
     verses = [verse.strip() for verse in open("verses.txt", "r").readlines()]
     wordlist = load_bip39()
