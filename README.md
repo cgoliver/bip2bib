@@ -13,6 +13,7 @@ pip install -r requirements.txt
 ## Usage
 
 ```
+python bip2bib.py --help
 python bip2bib.py -o out.txt
 ```
 
