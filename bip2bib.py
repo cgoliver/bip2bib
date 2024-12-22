@@ -1,11 +1,3 @@
-"""
-This program is free software. It comes without any warranty, to
-   * the extent permitted by applicable law. You can redistribute it
-   * and/or modify it under the terms of the Do What The Fuck You Want
-   * To Public License, Version 2, as published by Sam Hocevar. See
-   * http://www.wtfpl.net/ for more details.
-"""
-
 import os
 import sys
 import argparse
@@ -31,20 +23,8 @@ def cline():
 
 
 def idx_hash(num, secret="", mod=2048):
-    """
-    Hash an integer, modulo by a value, and map to an integer.
-
-    :param num: The integer to hash.
-    :param mod: The modulo value (default is 2048).
-    :return: An integer in the range [0, mod-1].
-    """
-    # Convert the integer to bytes
     num_bytes = f"{num}{secret}".encode("utf-8")
-
-    # Create a hash (using SHA-256 as an example)
     hashed = hashlib.sha256(num_bytes).hexdigest()
-
-    # Convert the hash to an integer and take modulo
     result = int(hashed, 16) % mod
     return result
 
