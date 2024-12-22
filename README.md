@@ -1,4 +1,4 @@
-# `bip2bib`: map BIP39 words to bible verses
+# `bip2bib`: map BIP-39 words to bible verses
 
 Deterministically map each BIP39 seed word to a Bible verse with optional passphrase.
 
