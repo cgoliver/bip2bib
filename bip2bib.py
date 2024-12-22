@@ -9,7 +9,11 @@ import pythonbible as bible
 def cline():
     parser = argparse.ArgumentParser()
     parser.add_argument(
-        "-s", "--secret", default="", type=str, help="Optional string appended to word index before hashing"
+        "-p",
+        "--passphrase",
+        default="",
+        type=str,
+        help="Optional string appended to word index before hashing, acts as passphrase.",
     )
     parser.add_argument(
         "-o", "--outfile", default="mapping.txt", type=str, help="Path to output file where mapping is stored."
@@ -66,7 +70,7 @@ def build_index(args) -> str:
     wordlist = load_bip39()
     with open(args.outfile, "w") as outf:
         for idx, word in enumerate(wordlist):
-            new_idx = idx_hash(idx, secret=args.secret, mod=len(verses))
+            new_idx = idx_hash(idx, secret=args.passphrase, mod=len(verses))
             outf.write(f"{word} {verses[new_idx]}\n")
 
 
