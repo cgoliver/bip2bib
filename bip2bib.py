@@ -65,7 +65,6 @@ def build_index(args) -> str:
 
 
 if __name__ == "__main__":
-    # args = cline()
-    dump_bible()
-    # build_index(args)
+    args = cline()
+    build_index(args)
     pass

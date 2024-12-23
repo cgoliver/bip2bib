@@ -20,13 +20,11 @@ python bip2bib.py -o out.txt
 Will generate a text file that looks like:
 
 ```
-abandon Isaiah 24:8
-ability Luke 16:8
-able John 10:21
-about 2 Chronicles 20:1
-above Deuteronomy 5:26
-absent Lamentations 3:13
-absorb Judges 5:18
+abandon John 4:2
+ability Ezekiel 24:10
+able Isaiah 36:15
+about Luke 6:15
+above 1 Samuel 12:13
 ...
 ```
 
@@ -40,13 +38,11 @@ Which generates:
 
 
 ```
-abandon 2 Corinthians 6:11
-ability Psalms 118:102
-able Judges 8:4
-about Luke 11:32
-above Psalms 25:5
-absent Leviticus 7:23
-absorb 1 John 3:17
+abandon Jeremiah 40:5
+ability Judges 6:21
+able Luke 14:11
+about 1 Chronicles 11:4
+above Matthew 18:23
 ...
 ```
 
