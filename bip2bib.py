@@ -16,7 +16,11 @@ def cline():
         help="Optional string appended to word index before hashing, acts as passphrase.",
     )
     parser.add_argument(
-        "-o", "--outfile", default="mapping.txt", type=str, help="Path to output file where mapping is stored."
+        "-o",
+        "--outfile",
+        default="mapping.txt",
+        type=str,
+        help="Path to output file where mapping is stored. Default: ./mapping.txt",
     )
     return parser.parse_args()
     pass
