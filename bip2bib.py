@@ -38,6 +38,8 @@ def dump_bible():
     with open("verses.txt", "w") as bib:
         all_books = bible.Book
         for book in all_books:
+            if book.value > 66:
+                break
             num_chapters = bible.get_number_of_chapters(book)
             for chapter in range(1, num_chapters + 1):
                 num_verses = bible.get_number_of_verses(book, chapter)
@@ -63,6 +65,7 @@ def build_index(args) -> str:
 
 
 if __name__ == "__main__":
-    args = cline()
-    build_index(args)
+    # args = cline()
+    dump_bible()
+    # build_index(args)
     pass
