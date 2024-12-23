@@ -26,7 +26,7 @@ def cline():
     pass
 
 
-def idx_hash(num, secret="", mod=2048):
+def word_hash_to_idx(num, secret="", mod=2048):
     num_bytes = f"{num}{secret}".encode("utf-8")
     hashed = hashlib.sha256(num_bytes).hexdigest()
     result = int(hashed, 16) % mod
@@ -63,8 +63,8 @@ def build_index(args) -> str:
     verses = [verse.strip() for verse in open("verses.txt", "r").readlines()]
     wordlist = load_bip39()
     with open(args.outfile, "w") as outf:
-        for idx, word in enumerate(wordlist):
-            new_idx = idx_hash(idx, secret=args.passphrase, mod=len(verses))
+        for word in wordlist:
+            new_idx = word_hash_to_idx(word, secret=args.passphrase, mod=len(verses))
             outf.write(f"{word} {verses[new_idx]}\n")
 
 
