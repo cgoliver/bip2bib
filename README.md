@@ -26,6 +26,11 @@ able Numbers 18:7
 about Job 17:1
 above Numbers 13:24
 ...
+youth Joshua 19:8
+zebra Numbers 20:20
+zero Luke 17:34
+zone Psalms 119:21
+zoo Esther 15:11
 ```
 
 To make the mapping unique to you (but still deterministic) you can add your own passphrase:
@@ -44,6 +49,11 @@ able 2 Chronicles 26:20
 about John 17:17
 above Job 24:7
 ...
+youth Mark 1:32
+zebra Revelation 9:13
+zero John 7:12
+zone 1 Corinthians 15:26
+zoo Acts 17:17
 ```
 
 You can always recover this mapping if you remember the seed word you provided.
