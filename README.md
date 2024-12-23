@@ -28,7 +28,7 @@ above 1 Samuel 12:13
 ...
 ```
 
-To make the mapping unique (but still deterministic) you can add your own passphrase:
+To make the mapping unique to you (but still deterministic) you can add your own passphrase:
 
 ```
 python bip2bib.py -o out.txt -p myword
