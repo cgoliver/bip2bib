@@ -57,7 +57,6 @@ def build_index(args) -> str:
 
 
 if __name__ == "__main__":
-    print("WARNING: To ensure mapping is reproducible, make sure you are always using the same Python version")
     args = cline()
     build_index(args)
     pass
