@@ -33,7 +33,7 @@ zone 2 Chronicles 13:2
 zoo Matthew 14:35
 ```
 
-To make the mapping unique to you (but still deterministic) you can add your own passphrase:
+To make the mapping unique to you (but still deterministic) you can set the random seed:
 
 ```
 python bip2bib.py -o out.txt -s 492919
