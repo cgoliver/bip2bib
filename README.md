@@ -56,7 +56,7 @@ zone 1 Chronicles 26:29
 zoo Numbers 6:2
 ```
 
-You can always recover this mapping if you remember the seed word you provided.
+You can always recover this mapping if you remember the seed you provided (see next section).
 
 ## How it works
 
