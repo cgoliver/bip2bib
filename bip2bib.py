@@ -1,20 +1,14 @@
 import os
 import sys
 import argparse
-import hashlib
+import random
 
 import pythonbible as bible
 
 
 def cline():
     parser = argparse.ArgumentParser()
-    parser.add_argument(
-        "-p",
-        "--passphrase",
-        default="",
-        type=str,
-        help="Optional string appended to word index before hashing, acts as passphrase.",
-    )
+    parser.add_argument("-s", "--seed", default=3, type=int, help="Random seed for reproducibility.")
     parser.add_argument(
         "-o",
         "--outfile",
@@ -24,13 +18,6 @@ def cline():
     )
     return parser.parse_args()
     pass
-
-
-def word_hash_to_idx(num, secret="", mod=2048):
-    num_bytes = f"{num}{secret}".encode("utf-8")
-    hashed = hashlib.sha256(num_bytes).hexdigest()
-    result = int(hashed, 16) % mod
-    return result
 
 
 def load_bip39():
@@ -61,14 +48,16 @@ def build_index(args) -> str:
         )
         dump_bible()
     verses = [verse.strip() for verse in open("verses.txt", "r").readlines()]
+    random.seed(args.seed)
+    random.shuffle(verses)
     wordlist = load_bip39()
     with open(args.outfile, "w") as outf:
-        for word in wordlist:
-            new_idx = word_hash_to_idx(word, secret=args.passphrase, mod=len(verses))
-            outf.write(f"{word} {verses[new_idx]}\n")
+        for i, word in enumerate(wordlist):
+            outf.write(f"{word} {verses[i]}\n")
 
 
 if __name__ == "__main__":
+    print("WARNING: To ensure mapping is reproducible, make sure you are always using the same Python version")
     args = cline()
     build_index(args)
     pass
